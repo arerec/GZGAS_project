@@ -39,6 +39,12 @@ def write_as_csv(save_filepath, data):
             writer.writerow([data[i]])
     write_file.close()
 
+def read_csv(path):
+    f = open(path)
+    output = np.loadtxt(f, delimiter=",", skiprows=0)
+    f.close()
+    return output
+
 def get_type_according_to_usernumber(usernumber, classification_table):
     """
     根据用户号返回时民用还是工商类型，民用返回0！！！工商返回的是1！！！
